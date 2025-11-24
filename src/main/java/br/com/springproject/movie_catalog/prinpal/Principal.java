@@ -1,5 +1,4 @@
 package br.com.springproject.movie_catalog.prinpal;
-import br.com.springproject.movie_catalog.model.DadosEpsodios;
 import br.com.springproject.movie_catalog.model.DadosSerie;
 import br.com.springproject.movie_catalog.model.DadosTemporada;
 import br.com.springproject.movie_catalog.service.ConsumoApi;
@@ -18,7 +17,7 @@ public class Principal {
         System.out.println("digite o filme ou serie desejado: ");
         String nome = scanner.nextLine();
         String nomeFomatado = nome.replace(" ", "+");
-        String  url = "http://www.omdbapi.com/?apikey=f6e4380d&t=" + nomeFomatado+"&Season=" ;
+        String  url = "http://www.omdbapi.com/?apikey= sua chave aqui =" + nomeFomatado+"&Season=" ;
 
         var json = pesquisa.obterDados(url);
         DadosSerie dados = conversor.obterDados(json,DadosSerie.class);
