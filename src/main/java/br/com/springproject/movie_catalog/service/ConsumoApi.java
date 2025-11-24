@@ -11,14 +11,12 @@ public class ConsumoApi {
     public String obterDados(String endereco) {
 
         HttpClient client = HttpClient.newHttpClient();
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(endereco))
-                .build();
+        HttpRequest request = HttpRequest.newBuilder().uri(URI.create(endereco)).build();
+
         HttpResponse<String> response = null;
 
         try {
-            response = client
-                    .send(request, HttpResponse.BodyHandlers.ofString());
+            response = client.send(request, HttpResponse.BodyHandlers.ofString());
         } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e);
         }
